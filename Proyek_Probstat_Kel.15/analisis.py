@@ -22,9 +22,6 @@ print("\nJUMLAH DATA:", df.shape)
 print("\n5 DATA PERTAMA:")
 print(df.head())
 
-# ==========================================
-# 2. IDENTIFIKASI SKALA PENGUKURAN
-# ==========================================
 
 skala = {
     "ID_Observasi": "Nominal (identitas)",
