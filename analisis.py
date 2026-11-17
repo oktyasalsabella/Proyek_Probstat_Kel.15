@@ -1,3 +1,4 @@
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -6,7 +7,6 @@ import os
 
 # ==========================================
 # PROYEK STATISTIKA KELOMPOK 15
-# MINGGU 1: EKSPLORASI DAN PEMBERSIHAN DATA
 # ==========================================
 
 # 1. MEMBACA DATASET
