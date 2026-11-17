@@ -1,0 +1,351 @@
+ID_Observasi,Zona_Lokasi,Jenis_Hari,Jam_Sibuk,Volume_Kendaraan,Kecepatan_Angin_KmJ,Suhu_Celcius,Indeks_PM25,Status_Udara
+OBS-15-0001,Kawasan Kampus,Hari Kerja,Ya,469,9.4,26.5,53.3,Sedang
+OBS-15-0002,Pusat Kota,Hari Kerja,Ya,469,3.1,33.1,51.9,Sedang
+OBS-15-0003,Pusat Kota,Hari Kerja,Tidak,619,25.4,30.6,49.8,Sedang
+OBS-15-0004,Pusat Kota,Hari Kerja,Ya,647,7.4,25.1,57.2,Sedang
+OBS-15-0005,Kawasan Kampus,Hari Kerja,Ya,300,15.3,27.2,27.2,Baik
+OBS-15-0006,Kawasan Kampus,Hari Kerja,Ya,388,1.1,29.7,45.1,Sedang
+OBS-15-0007,Kawasan Kampus,Akhir Pekan,Tidak,250,7.1,28.0,33.1,Baik
+OBS-15-0008,Pusat Kota,Hari Kerja,Ya,602,10.1,28.3,55.6,Sedang
+OBS-15-0009,Pusat Kota,Hari Kerja,Tidak,592,4.4,30.7,56.8,Sedang
+OBS-15-0010,Pinggiran,Hari Kerja,Tidak,335,6.7,28.2,33.4,Baik
+OBS-15-0011,Pinggiran,Hari Kerja,Tidak,304,9.3,32.9,35.1,Sedang
+OBS-15-0012,Pusat Kota,Akhir Pekan,Tidak,392,3.1,29.4,35.1,Sedang
+OBS-15-0013,Pinggiran,Hari Kerja,Tidak,339,19.9,28.0,29.4,Baik
+OBS-15-0014,Kawasan Kampus,Hari Kerja,Tidak,362,1.0,28.7,31.8,Baik
+OBS-15-0015,Pinggiran,Hari Kerja,Tidak,340,15.9,25.9,21.8,Baik
+OBS-15-0016,Pinggiran,Hari Kerja,Ya,215,10.9,29.9,24.4,Baik
+OBS-15-0017,Pusat Kota,Hari Kerja,Ya,616,8.3,26.0,58.0,Sedang
+OBS-15-0018,Kawasan Kampus,Hari Kerja,Tidak,429,6.3,29.1,61.9,Sedang
+OBS-15-0019,Pusat Kota,Hari Kerja,Tidak,637,14.0,29.3,64.2,Sedang
+OBS-15-0020,Pinggiran,Hari Kerja,Tidak,369,15.2,27.7,29.4,Baik
+OBS-15-0021,Pinggiran,Hari Kerja,Ya,242,7.4,28.2,24.5,Baik
+OBS-15-0022,Pusat Kota,Hari Kerja,Ya,724,18.1,27.1,280.5,Sedang
+OBS-15-0023,Kawasan Kampus,Hari Kerja,Ya,411,14.1,27.5,39.3,Sedang
+OBS-15-0024,Pinggiran,Akhir Pekan,Ya,50,24.4,26.4,5.0,Baik
+OBS-15-0025,Pusat Kota,Hari Kerja,Ya,798,4.9,30.8,80.9,Tidak Sehat
+OBS-15-0026,Kawasan Kampus,Hari Kerja,Tidak,351,8.5,32.3,24.4,Baik
+OBS-15-0027,Pusat Kota,Hari Kerja,Tidak,644,10.3,30.5,71.3,Tidak Sehat
+OBS-15-0028,Pinggiran,Hari Kerja,Ya,266,4.8,29.8,34.2,Baik
+OBS-15-0029,Pusat Kota,Hari Kerja,Ya,713,11.1,26.9,55.3,Sedang
+OBS-15-0030,Kawasan Kampus,Akhir Pekan,Ya,217,20.6,28.1,14.0,Baik
+OBS-15-0031,Kawasan Kampus,Hari Kerja,Tidak,235,14.4,32.8,16.8,Baik
+OBS-15-0032,Pusat Kota,Hari Kerja,Tidak,607,29.0,27.3,29.0,Baik
+OBS-15-0033,Kawasan Kampus,Hari Kerja,Tidak,402,5.1,26.5,58.7,Sedang
+OBS-15-0034,Kawasan Kampus,Hari Kerja,Tidak,318,14.0,29.5,25.7,Baik
+OBS-15-0035,Kawasan Kampus,Hari Kerja,Tidak,304,3.7,28.0,42.4,Sedang
+OBS-15-0036,Pinggiran,Akhir Pekan,Tidak,50,8.6,29.8,5.0,Baik
+OBS-15-0037,Pinggiran,Hari Kerja,Ya,346,4.9,24.8,40.5,Sedang
+OBS-15-0038,Pusat Kota,Akhir Pekan,Tidak,295,5.4,25.4,42.2,Sedang
+OBS-15-0039,Pusat Kota,Akhir Pekan,Tidak,435,21.3,29.3,27.4,Baik
+OBS-15-0040,Kawasan Kampus,Hari Kerja,Ya,439,10.2,29.2,46.0,Sedang
+OBS-15-0041,Pusat Kota,Hari Kerja,Ya,674,6.2,24.7,68.1,Tidak Sehat
+OBS-15-0042,Pusat Kota,Akhir Pekan,Tidak,456,4.2,25.5,52.7,Sedang
+OBS-15-0043,Pusat Kota,Hari Kerja,Ya,697,11.6,29.8,77.8,Tidak Sehat
+OBS-15-0044,Kawasan Kampus,Hari Kerja,Tidak,363,14.3,24.7,38.5,Sedang
+OBS-15-0045,Pusat Kota,Hari Kerja,Tidak,546,6.2,31.9,56.4,Sedang
+OBS-15-0046,Kawasan Kampus,Hari Kerja,Tidak,323,12.1,28.9,21.4,Baik
+OBS-15-0047,Kawasan Kampus,Hari Kerja,Ya,483,13.1,31.3,50.0,Sedang
+OBS-15-0048,Pusat Kota,Akhir Pekan,Tidak,580,2.2,29.8,56.3,Sedang
+OBS-15-0049,Pusat Kota,Akhir Pekan,Tidak,441,13.0,30.4,42.4,Sedang
+OBS-15-0050,Pusat Kota,Hari Kerja,Tidak,761,1.7,29.3,77.1,Tidak Sehat
+OBS-15-0051,Pusat Kota,Hari Kerja,Tidak,620,4.8,28.4,68.5,Tidak Sehat
+OBS-15-0052,Pusat Kota,Hari Kerja,Ya,596,3.7,29.7,62.0,Sedang
+OBS-15-0053,Pusat Kota,Hari Kerja,Ya,726,7.9,28.2,76.9,Tidak Sehat
+OBS-15-0054,Pusat Kota,Hari Kerja,Tidak,680,11.2,28.8,56.2,Sedang
+OBS-15-0055,Pusat Kota,Hari Kerja,Tidak,653,14.0,31.0,57.5,Sedang
+OBS-15-0056,Kawasan Kampus,Hari Kerja,Tidak,329,5.7,26.7,50.2,Sedang
+OBS-15-0057,Kawasan Kampus,Hari Kerja,Ya,361,11.0,30.7,36.0,Sedang
+OBS-15-0058,Kawasan Kampus,Akhir Pekan,Ya,200,9.8,29.1,28.7,Baik
+OBS-15-0059,Kawasan Kampus,Akhir Pekan,Tidak,254,2.2,28.3,21.6,Baik
+OBS-15-0060,Pusat Kota,Hari Kerja,Ya,614,10.1,29.8,65.3,Tidak Sehat
+OBS-15-0061,Kawasan Kampus,Hari Kerja,Ya,384,4.9,30.2,50.8,Sedang
+OBS-15-0062,Pusat Kota,Hari Kerja,Tidak,540,12.5,24.8,61.3,Sedang
+OBS-15-0063,Pinggiran,Hari Kerja,Tidak,351,13.2,28.0,21.5,Baik
+OBS-15-0064,Pusat Kota,Hari Kerja,Tidak,623,19.3,29.0,54.2,Sedang
+OBS-15-0065,Pusat Kota,Hari Kerja,Ya,604,13.2,30.0,58.4,Sedang
+OBS-15-0066,Pinggiran,Akhir Pekan,Tidak,151,25.9,27.5,5.0,Baik
+OBS-15-0067,Pusat Kota,Hari Kerja,Ya,599,12.6,29.7,44.8,Sedang
+OBS-15-0068,Pusat Kota,Hari Kerja,Tidak,817,4.1,27.7,99.2,Tidak Sehat
+OBS-15-0069,Pinggiran,Hari Kerja,Ya,421,4.0,30.3,56.4,Sedang
+OBS-15-0070,Kawasan Kampus,Hari Kerja,Tidak,356,11.4,31.9,30.2,Baik
+OBS-15-0071,Pinggiran,Akhir Pekan,Ya,50,7.1,29.0,16.9,Baik
+OBS-15-0072,Kawasan Kampus,Hari Kerja,Tidak,501,9.9,27.7,52.9,Sedang
+OBS-15-0073,Pinggiran,Akhir Pekan,Tidak,238,2.5,27.7,41.4,Sedang
+OBS-15-0074,Kawasan Kampus,Hari Kerja,Tidak,402,11.6,24.3,43.3,Sedang
+OBS-15-0075,Pusat Kota,Hari Kerja,Tidak,789,3.7,28.6,83.2,Tidak Sehat
+OBS-15-0076,Kawasan Kampus,Hari Kerja,Tidak,422,10.4,28.0,40.7,Sedang
+OBS-15-0077,Pinggiran,Hari Kerja,Tidak,231,,26.6,31.8,Baik
+OBS-15-0078,Kawasan Kampus,Hari Kerja,Ya,271,11.7,30.2,20.3,Baik
+OBS-15-0079,Pinggiran,Akhir Pekan,Tidak,77,6.6,32.5,18.2,Baik
+OBS-15-0080,Pinggiran,Akhir Pekan,Tidak,151,8.4,29.5,,Baik
+OBS-15-0081,Kawasan Kampus,Akhir Pekan,Ya,81,11.3,24.3,24.8,Baik
+OBS-15-0082,Kawasan Kampus,Akhir Pekan,Tidak,247,5.8,28.7,41.8,Sedang
+OBS-15-0083,Kawasan Kampus,Akhir Pekan,Tidak,304,2.7,27.9,49.4,Sedang
+OBS-15-0084,Kawasan Kampus,Hari Kerja,Ya,360,10.2,30.1,44.6,Sedang
+OBS-15-0085,Pusat Kota,Hari Kerja,Ya,624,14.1,29.4,57.7,Sedang
+OBS-15-0086,Kawasan Kampus,Hari Kerja,Ya,400,32.6,29.3,15.8,Baik
+OBS-15-0087,Kawasan Kampus,Hari Kerja,Tidak,387,14.7,27.9,27.7,Baik
+OBS-15-0088,Pinggiran,Akhir Pekan,Tidak,231,8.1,28.2,31.3,Baik
+OBS-15-0089,Kawasan Kampus,Hari Kerja,Tidak,436,6.4,27.1,44.2,Sedang
+OBS-15-0090,Kawasan Kampus,Akhir Pekan,Tidak,208,6.2,25.0,41.9,Sedang
+OBS-15-0091,Pusat Kota,Hari Kerja,Ya,719,8.2,29.3,71.5,Tidak Sehat
+OBS-15-0092,Pinggiran,Hari Kerja,Tidak,271,2.3,29.9,38.2,Sedang
+OBS-15-0093,Kawasan Kampus,Hari Kerja,Tidak,395,7.0,27.9,37.7,Sedang
+OBS-15-0094,Pinggiran,Hari Kerja,Tidak,311,8.1,26.5,45.3,Sedang
+OBS-15-0095,Pinggiran,Akhir Pekan,Tidak,62,6.4,30.6,25.5,Baik
+OBS-15-0096,Pusat Kota,Hari Kerja,Ya,658,4.7,27.9,68.0,Tidak Sehat
+OBS-15-0097,Pinggiran,Hari Kerja,Ya,131,8.8,24.4,8.5,Baik
+OBS-15-0098,Kawasan Kampus,Hari Kerja,Tidak,326,8.6,29.1,25.1,Baik
+OBS-15-0099,Pusat Kota,Akhir Pekan,Tidak,412,7.4,27.9,54.1,Sedang
+OBS-15-0100,Pusat Kota,Akhir Pekan,Tidak,454,6.4,28.1,45.5,Sedang
+OBS-15-0101,Pusat Kota,Hari Kerja,Ya,669,17.3,32.1,58.0,Sedang
+OBS-15-0102,Pusat Kota,Hari Kerja,Tidak,677,3.9,33.7,67.5,Tidak Sehat
+OBS-15-0103,Pinggiran,Akhir Pekan,Tidak,161,11.1,29.5,27.5,Baik
+OBS-15-0104,Pusat Kota,Hari Kerja,Ya,586,3.8,30.1,,Sedang
+OBS-15-0105,Kawasan Kampus,Akhir Pekan,Ya,266,10.2,29.4,38.2,Sedang
+OBS-15-0106,Pusat Kota,Hari Kerja,Ya,646,3.8,28.4,69.8,Tidak Sehat
+OBS-15-0107,Pinggiran,Hari Kerja,Tidak,202,3.9,28.2,28.3,Baik
+OBS-15-0108,Pinggiran,Hari Kerja,Tidak,223,6.2,29.2,41.5,Sedang
+OBS-15-0109,Pinggiran,Hari Kerja,Ya,264,11.4,32.1,37.3,Sedang
+OBS-15-0110,Pinggiran,Hari Kerja,Tidak,329,13.4,27.1,30.7,Baik
+OBS-15-0111,Kawasan Kampus,Hari Kerja,Ya,422,16.9,24.9,42.6,Sedang
+OBS-15-0112,Kawasan Kampus,Akhir Pekan,Tidak,275,4.6,24.9,35.9,Sedang
+OBS-15-0113,Pinggiran,Hari Kerja,Tidak,273,3.6,29.0,36.9,Sedang
+OBS-15-0114,Pusat Kota,Akhir Pekan,Tidak,494,23.3,30.4,30.1,Baik
+OBS-15-0115,Kawasan Kampus,Hari Kerja,Ya,411,28.7,29.1,21.6,Baik
+OBS-15-0116,Pusat Kota,Hari Kerja,Tidak,616,13.4,33.4,54.9,Sedang
+OBS-15-0117,Pusat Kota,Hari Kerja,Ya,623,2.8,27.1,66.7,Tidak Sehat
+OBS-15-0118,Kawasan Kampus,Akhir Pekan,Tidak,273,2.8,25.7,47.7,Sedang
+OBS-15-0119,Kawasan Kampus,Hari Kerja,Ya,366,4.1,28.4,42.3,Sedang
+OBS-15-0120,Pusat Kota,Akhir Pekan,Tidak,542,6.6,30.4,50.8,Sedang
+OBS-15-0121,Kawasan Kampus,Hari Kerja,Tidak,236,16.4,27.4,24.3,Baik
+OBS-15-0122,Kawasan Kampus,Hari Kerja,Ya,360,9.6,28.1,29.8,Baik
+OBS-15-0123,Kawasan Kampus,Hari Kerja,Ya,399,5.1,28.8,42.4,Sedang
+OBS-15-0124,Kawasan Kampus,Akhir Pekan,Tidak,240,19.1,27.6,14.3,Baik
+OBS-15-0125,Pusat Kota,Akhir Pekan,Tidak,339,6.9,30.9,43.1,Sedang
+OBS-15-0126,Pinggiran,Hari Kerja,Ya,436,9.0,29.7,48.8,Sedang
+OBS-15-0127,Pusat Kota,Akhir Pekan,Tidak,378,8.2,31.1,36.8,Sedang
+OBS-15-0128,Pinggiran,Hari Kerja,Tidak,365,9.6,29.0,38.2,Sedang
+OBS-15-0129,Kawasan Kampus,Hari Kerja,Tidak,407,13.9,31.1,35.4,Sedang
+OBS-15-0130,Kawasan Kampus,Hari Kerja,Tidak,511,7.4,28.8,49.3,Sedang
+OBS-15-0131,Kawasan Kampus,Hari Kerja,Ya,340,10.0,29.1,42.5,Sedang
+OBS-15-0132,Kawasan Kampus,Akhir Pekan,Tidak,143,7.6,26.6,26.2,Baik
+OBS-15-0133,Pusat Kota,Akhir Pekan,Tidak,436,20.7,28.0,24.4,Baik
+OBS-15-0134,Pusat Kota,Hari Kerja,Tidak,652,4.4,26.7,60.6,Sedang
+OBS-15-0135,Pinggiran,Akhir Pekan,Tidak,140,8.4,30.9,18.0,Baik
+OBS-15-0136,Pinggiran,Hari Kerja,Tidak,376,23.8,27.8,31.6,Baik
+OBS-15-0137,Pusat Kota,Hari Kerja,Tidak,580,7.7,29.0,56.5,Sedang
+OBS-15-0138,Kawasan Kampus,Hari Kerja,Ya,365,8.1,30.9,47.4,Sedang
+OBS-15-0139,Pinggiran,Hari Kerja,Tidak,370,20.5,26.6,27.6,Baik
+OBS-15-0140,Pusat Kota,Akhir Pekan,Tidak,409,18.3,29.3,36.0,Sedang
+OBS-15-0141,Pinggiran,Hari Kerja,Tidak,363,12.7,32.3,39.9,Sedang
+OBS-15-0142,Pusat Kota,Hari Kerja,Ya,562,3.9,25.5,60.8,Sedang
+OBS-15-0143,Kawasan Kampus,Hari Kerja,Tidak,374,3.1,26.9,41.6,Sedang
+OBS-15-0144,Kawasan Kampus,Hari Kerja,Tidak,281,7.6,28.4,20.5,Baik
+OBS-15-0145,Pinggiran,Akhir Pekan,Ya,151,13.9,25.6,13.3,Baik
+OBS-15-0146,Pinggiran,Hari Kerja,Tidak,187,10.5,26.4,40.0,Sedang
+OBS-15-0147,Pusat Kota,Hari Kerja,Tidak,557,16.5,35.4,56.9,Sedang
+OBS-15-0148,Pusat Kota,Hari Kerja,Tidak,698,18.5,31.2,62.6,Sedang
+OBS-15-0149,Kawasan Kampus,Hari Kerja,Tidak,465,11.7,29.8,43.8,Sedang
+OBS-15-0150,Pusat Kota,Akhir Pekan,Tidak,366,1.0,25.8,45.1,Sedang
+OBS-15-0151,Pusat Kota,Hari Kerja,Tidak,511,2.1,31.9,64.5,Sedang
+OBS-15-0152,Kawasan Kampus,Hari Kerja,Ya,355,28.7,30.0,25.7,Baik
+OBS-15-0153,Pinggiran,Hari Kerja,Ya,348,10.3,26.6,23.9,Baik
+OBS-15-0154,Kawasan Kampus,Akhir Pekan,Tidak,322,10.2,27.4,33.0,Baik
+OBS-15-0155,Kawasan Kampus,Hari Kerja,Tidak,348,20.9,28.8,19.4,Baik
+OBS-15-0156,Kawasan Kampus,Hari Kerja,Ya,359,21.3,26.1,21.2,Baik
+OBS-15-0157,Kawasan Kampus,Akhir Pekan,Tidak,198,17.4,26.0,19.6,Baik
+OBS-15-0158,Pusat Kota,Akhir Pekan,Tidak,388,6.1,31.4,41.3,Sedang
+OBS-15-0159,Kawasan Kampus,Hari Kerja,Tidak,347,11.5,26.2,33.8,Baik
+OBS-15-0160,Pusat Kota,Hari Kerja,Ya,717,3.8,25.3,73.4,Tidak Sehat
+OBS-15-0161,Pusat Kota,Hari Kerja,Tidak,562,20.8,30.8,44.5,Sedang
+OBS-15-0162,Kawasan Kampus,Akhir Pekan,Tidak,75,8.0,28.8,5.3,Baik
+OBS-15-0163,Pusat Kota,Hari Kerja,Ya,621,4.0,29.7,59.6,Sedang
+OBS-15-0164,Pusat Kota,Hari Kerja,Tidak,699,11.2,31.1,57.1,Sedang
+OBS-15-0165,Kawasan Kampus,Akhir Pekan,Ya,189,14.3,33.4,23.9,Baik
+OBS-15-0166,Pusat Kota,Hari Kerja,Ya,577,6.0,31.5,66.1,Tidak Sehat
+OBS-15-0167,Pinggiran,Akhir Pekan,Ya,50,10.3,30.8,22.7,Baik
+OBS-15-0168,Kawasan Kampus,Hari Kerja,Tidak,463,11.2,27.8,49.5,Sedang
+OBS-15-0169,Pinggiran,Akhir Pekan,Tidak,95,12.7,29.4,11.5,Baik
+OBS-15-0170,Kawasan Kampus,Hari Kerja,Tidak,385,3.1,25.9,51.8,Sedang
+OBS-15-0171,Pinggiran,Hari Kerja,Tidak,400,17.4,26.7,30.2,Baik
+OBS-15-0172,Pusat Kota,Hari Kerja,Ya,688,10.0,26.1,67.8,Tidak Sehat
+OBS-15-0173,Pinggiran,Hari Kerja,Tidak,287,10.9,28.0,22.1,Baik
+OBS-15-0174,Pusat Kota,Hari Kerja,Ya,623,7.7,30.4,69.1,Tidak Sehat
+OBS-15-0175,Pinggiran,Akhir Pekan,Tidak,96,7.7,28.7,10.4,Baik
+OBS-15-0176,Pinggiran,Akhir Pekan,Tidak,277,5.5,34.1,40.5,Sedang
+OBS-15-0177,Pusat Kota,Hari Kerja,Ya,661,7.2,30.1,72.0,Tidak Sehat
+OBS-15-0178,Pusat Kota,Hari Kerja,Ya,650,3.8,29.8,61.9,Sedang
+OBS-15-0179,Pusat Kota,Hari Kerja,Ya,668,1.0,27.7,70.6,Tidak Sehat
+OBS-15-0180,Kawasan Kampus,Hari Kerja,Tidak,368,6.5,28.7,44.5,Sedang
+OBS-15-0181,Pusat Kota,Hari Kerja,Tidak,599,14.3,27.3,45.4,Sedang
+OBS-15-0182,Kawasan Kampus,Hari Kerja,Tidak,577,9.4,28.2,66.3,Tidak Sehat
+OBS-15-0183,Pinggiran,Hari Kerja,Ya,307,12.6,30.8,31.5,Baik
+OBS-15-0184,Pusat Kota,Hari Kerja,Tidak,535,5.2,29.9,62.1,Sedang
+OBS-15-0185,Pusat Kota,Hari Kerja,Tidak,632,5.7,26.3,69.6,Tidak Sehat
+OBS-15-0186,Pusat Kota,Hari Kerja,Ya,659,3.8,30.7,79.4,Tidak Sehat
+OBS-15-0187,Pinggiran,Hari Kerja,Ya,170,10.2,29.1,28.7,Baik
+OBS-15-0188,Kawasan Kampus,Hari Kerja,Tidak,389,12.6,29.3,36.5,Sedang
+OBS-15-0189,Pusat Kota,Hari Kerja,Tidak,618,7.2,25.4,61.1,Sedang
+OBS-15-0190,Pusat Kota,Hari Kerja,Ya,525,5.8,23.2,47.9,Sedang
+OBS-15-0191,Pusat Kota,Akhir Pekan,Tidak,400,8.3,27.4,41.3,Sedang
+OBS-15-0192,Kawasan Kampus,Hari Kerja,Tidak,419,17.7,30.5,29.8,Baik
+OBS-15-0193,Pinggiran,Akhir Pekan,Tidak,50,7.4,29.1,22.1,Baik
+OBS-15-0194,Kawasan Kampus,Hari Kerja,Tidak,497,8.0,24.4,51.1,Sedang
+OBS-15-0195,Pinggiran,Hari Kerja,Ya,398,7.8,27.9,37.3,Sedang
+OBS-15-0196,Kawasan Kampus,Hari Kerja,Tidak,381,1.8,29.3,51.3,Sedang
+OBS-15-0197,Pusat Kota,Hari Kerja,Tidak,562,3.1,30.0,49.4,Sedang
+OBS-15-0198,Pusat Kota,Hari Kerja,Ya,774,1.2,30.3,79.6,Tidak Sehat
+OBS-15-0199,Pinggiran,Akhir Pekan,Ya,222,11.7,28.5,28.1,Baik
+OBS-15-0200,Kawasan Kampus,Hari Kerja,Tidak,423,23.0,26.9,31.3,Baik
+OBS-15-0201,Pinggiran,Hari Kerja,Tidak,156,,29.9,17.0,Baik
+OBS-15-0202,Pusat Kota,Hari Kerja,Tidak,591,2.7,34.0,64.3,Sedang
+OBS-15-0203,Kawasan Kampus,Hari Kerja,Ya,220,15.3,25.0,25.7,Baik
+OBS-15-0204,Kawasan Kampus,Akhir Pekan,Tidak,191,8.1,27.9,29.5,Baik
+OBS-15-0205,Pinggiran,Hari Kerja,Tidak,198,11.2,27.4,18.9,Baik
+OBS-15-0206,Pusat Kota,Hari Kerja,Tidak,620,18.6,26.2,46.3,Sedang
+OBS-15-0207,Kawasan Kampus,Hari Kerja,Tidak,362,6.9,24.8,46.2,Sedang
+OBS-15-0208,Pusat Kota,Hari Kerja,Tidak,695,6.9,29.1,67.8,Tidak Sehat
+OBS-15-0209,Pusat Kota,Hari Kerja,Ya,616,4.6,29.4,68.2,Tidak Sehat
+OBS-15-0210,Pusat Kota,Hari Kerja,Ya,612,14.9,28.5,57.0,Sedang
+OBS-15-0211,Pusat Kota,Hari Kerja,Ya,699,25.9,23.1,53.1,Sedang
+OBS-15-0212,Kawasan Kampus,Hari Kerja,Tidak,518,7.5,32.6,50.4,Sedang
+OBS-15-0213,Kawasan Kampus,Hari Kerja,Ya,420,5.2,26.7,52.2,Sedang
+OBS-15-0214,Pinggiran,Hari Kerja,Tidak,262,1.7,29.3,31.2,Baik
+OBS-15-0215,Pinggiran,Hari Kerja,Tidak,267,12.3,27.4,17.0,Baik
+OBS-15-0216,Pusat Kota,Hari Kerja,Tidak,774,7.7,33.4,87.7,Tidak Sehat
+OBS-15-0217,Pusat Kota,Hari Kerja,Ya,670,1.7,27.5,82.1,Tidak Sehat
+OBS-15-0218,Pusat Kota,Akhir Pekan,Tidak,626,16.3,31.7,60.1,Sedang
+OBS-15-0219,Pinggiran,Hari Kerja,Tidak,160,8.8,31.5,33.7,Baik
+OBS-15-0220,Pusat Kota,Hari Kerja,Tidak,664,13.1,28.2,66.5,Tidak Sehat
+OBS-15-0221,Kawasan Kampus,Akhir Pekan,Ya,194,14.1,25.6,22.5,Baik
+OBS-15-0222,Pusat Kota,Hari Kerja,Tidak,673,9.9,30.0,68.7,Tidak Sehat
+OBS-15-0223,Pusat Kota,Hari Kerja,Tidak,587,3.7,27.1,63.2,Sedang
+OBS-15-0224,Kawasan Kampus,Hari Kerja,Tidak,248,11.2,27.4,30.0,Baik
+OBS-15-0225,Kawasan Kampus,Hari Kerja,Ya,330,26.3,28.2,15.6,Baik
+OBS-15-0226,Kawasan Kampus,Hari Kerja,Ya,439,2.9,28.8,47.2,Sedang
+OBS-15-0227,Pusat Kota,Akhir Pekan,Tidak,491,10.0,27.7,55.7,Sedang
+OBS-15-0228,Kawasan Kampus,Hari Kerja,Tidak,344,9.7,25.1,29.9,Baik
+OBS-15-0229,Pusat Kota,Hari Kerja,Tidak,603,24.5,29.8,39.0,Sedang
+OBS-15-0230,Kawasan Kampus,Akhir Pekan,Tidak,222,5.7,27.2,27.0,Baik
+OBS-15-0231,Kawasan Kampus,Akhir Pekan,Tidak,245,10.0,32.7,28.7,Baik
+OBS-15-0232,Pinggiran,Hari Kerja,Tidak,340,3.0,29.1,44.1,Sedang
+OBS-15-0233,Pinggiran,Hari Kerja,Tidak,315,4.1,30.5,54.3,Sedang
+OBS-15-0234,Pinggiran,Hari Kerja,Tidak,381,4.3,29.9,,Sedang
+OBS-15-0235,Kawasan Kampus,Hari Kerja,Tidak,341,5.0,29.0,42.1,Sedang
+OBS-15-0236,Pinggiran,Hari Kerja,Tidak,279,12.9,28.1,35.3,Sedang
+OBS-15-0237,Pusat Kota,Hari Kerja,Ya,602,12.0,29.1,62.1,Sedang
+OBS-15-0238,Pinggiran,Akhir Pekan,Tidak,174,17.0,29.1,13.9,Baik
+OBS-15-0239,Pusat Kota,Hari Kerja,Ya,693,4.8,29.3,80.1,Tidak Sehat
+OBS-15-0240,Pinggiran,Hari Kerja,Ya,205,4.1,27.4,35.9,Sedang
+OBS-15-0241,Pusat Kota,Akhir Pekan,Tidak,387,6.9,26.3,35.8,Sedang
+OBS-15-0242,Pusat Kota,Hari Kerja,Ya,623,3.4,29.1,59.0,Sedang
+OBS-15-0243,Kawasan Kampus,Hari Kerja,Ya,517,12.4,31.1,40.2,Sedang
+OBS-15-0244,Pinggiran,Hari Kerja,Tidak,394,2.3,31.8,46.8,Sedang
+OBS-15-0245,Pusat Kota,Akhir Pekan,Ya,419,2.9,29.6,48.3,Sedang
+OBS-15-0246,Pusat Kota,Akhir Pekan,Tidak,481,4.2,27.5,52.4,Sedang
+OBS-15-0247,Kawasan Kampus,Akhir Pekan,Tidak,199,7.2,28.9,19.4,Baik
+OBS-15-0248,Kawasan Kampus,Hari Kerja,Ya,476,11.2,29.0,50.1,Sedang
+OBS-15-0249,Kawasan Kampus,Hari Kerja,Ya,438,16.9,25.4,47.7,Sedang
+OBS-15-0250,Pusat Kota,Hari Kerja,Tidak,562,7.4,27.3,58.5,Sedang
+OBS-15-0251,Pinggiran,Akhir Pekan,Tidak,137,16.3,30.5,5.0,Baik
+OBS-15-0252,Kawasan Kampus,Hari Kerja,Ya,422,16.5,25.6,31.4,Baik
+OBS-15-0253,Pusat Kota,Hari Kerja,Tidak,717,11.6,30.7,56.9,Sedang
+OBS-15-0254,Pusat Kota,Akhir Pekan,Ya,455,14.5,26.6,30.7,Baik
+OBS-15-0255,Kawasan Kampus,Hari Kerja,Ya,267,7.7,29.1,38.4,Sedang
+OBS-15-0256,Pinggiran,Akhir Pekan,Tidak,238,9.5,29.8,27.8,Baik
+OBS-15-0257,Kawasan Kampus,Hari Kerja,Tidak,405,4.0,26.3,33.0,Baik
+OBS-15-0258,Kawasan Kampus,Hari Kerja,Tidak,523,19.7,30.1,40.9,Sedang
+OBS-15-0259,Pinggiran,Hari Kerja,Ya,402,6.4,33.5,43.8,Sedang
+OBS-15-0260,Pusat Kota,Hari Kerja,Tidak,584,13.5,28.3,53.2,Sedang
+OBS-15-0261,Kawasan Kampus,Akhir Pekan,Tidak,281,11.1,30.4,21.5,Baik
+OBS-15-0262,Pusat Kota,Hari Kerja,Ya,661,14.6,28.8,53.4,Sedang
+OBS-15-0263,Kawasan Kampus,Hari Kerja,Ya,367,2.8,29.8,26.3,Baik
+OBS-15-0264,Kawasan Kampus,Hari Kerja,Tidak,382,12.1,27.8,34.4,Baik
+OBS-15-0265,Pusat Kota,Hari Kerja,Tidak,610,7.1,30.3,49.2,Sedang
+OBS-15-0266,Pinggiran,Akhir Pekan,Tidak,155,27.7,29.8,5.0,Baik
+OBS-15-0267,Pusat Kota,Hari Kerja,Tidak,741,12.1,24.4,79.2,Tidak Sehat
+OBS-15-0268,Kawasan Kampus,Akhir Pekan,Ya,269,8.5,24.0,32.3,Baik
+OBS-15-0269,Pinggiran,Hari Kerja,Ya,221,15.1,26.7,14.0,Baik
+OBS-15-0270,Pinggiran,Akhir Pekan,Ya,286,14.6,27.9,38.4,Sedang
+OBS-15-0271,Kawasan Kampus,Hari Kerja,Tidak,391,19.7,26.1,39.1,Sedang
+OBS-15-0272,Kawasan Kampus,Hari Kerja,Tidak,331,4.2,27.3,37.7,Sedang
+OBS-15-0273,Pinggiran,Hari Kerja,Tidak,374,14.0,25.6,28.9,Baik
+OBS-15-0274,Kawasan Kampus,Hari Kerja,Tidak,481,16.2,27.2,40.1,Sedang
+OBS-15-0275,Kawasan Kampus,Akhir Pekan,Ya,257,35.0,30.6,5.0,Baik
+OBS-15-0276,Kawasan Kampus,Akhir Pekan,Ya,172,8.3,29.9,27.4,Baik
+OBS-15-0277,Pusat Kota,Hari Kerja,Tidak,744,10.3,27.1,68.8,Tidak Sehat
+OBS-15-0278,Kawasan Kampus,Akhir Pekan,Ya,344,3.0,28.7,35.4,Sedang
+OBS-15-0279,Pusat Kota,Akhir Pekan,Tidak,401,10.4,29.1,45.0,Sedang
+OBS-15-0280,Kawasan Kampus,Akhir Pekan,Ya,69,12.5,29.9,13.5,Baik
+OBS-15-0281,Kawasan Kampus,Hari Kerja,Tidak,288,15.1,33.0,32.9,Baik
+OBS-15-0282,Kawasan Kampus,Akhir Pekan,Ya,139,5.1,30.3,25.2,Baik
+OBS-15-0283,Pinggiran,Hari Kerja,Tidak,366,17.0,29.8,35.6,Sedang
+OBS-15-0284,Kawasan Kampus,Hari Kerja,Tidak,408,8.3,27.4,51.2,Sedang
+OBS-15-0285,Kawasan Kampus,Akhir Pekan,Ya,142,3.8,24.4,29.7,Baik
+OBS-15-0286,Pusat Kota,Akhir Pekan,Ya,538,2.4,27.5,59.7,Sedang
+OBS-15-0287,Pusat Kota,Hari Kerja,Tidak,668,2.0,34.4,73.9,Tidak Sehat
+OBS-15-0288,Kawasan Kampus,Akhir Pekan,Tidak,177,8.5,29.9,32.6,Baik
+OBS-15-0289,Pinggiran,Hari Kerja,Tidak,303,10.0,25.1,50.9,Sedang
+OBS-15-0290,Pinggiran,Akhir Pekan,Ya,97,4.3,27.4,13.9,Baik
+OBS-15-0291,Kawasan Kampus,Akhir Pekan,Ya,88,1.6,30.4,18.1,Baik
+OBS-15-0292,Pusat Kota,Akhir Pekan,Tidak,483,4.1,31.4,56.5,Sedang
+OBS-15-0293,Pinggiran,Hari Kerja,Tidak,246,10.2,29.8,19.3,Baik
+OBS-15-0294,Kawasan Kampus,Akhir Pekan,Ya,292,20.0,28.1,13.3,Baik
+OBS-15-0295,Pusat Kota,Akhir Pekan,Tidak,446,3.3,28.4,41.4,Sedang
+OBS-15-0296,Pinggiran,Hari Kerja,Ya,276,10.8,26.1,27.6,Baik
+OBS-15-0297,Pusat Kota,Hari Kerja,Ya,659,4.8,33.0,65.4,Tidak Sehat
+OBS-15-0298,Kawasan Kampus,Hari Kerja,Tidak,314,12.9,29.5,20.3,Baik
+OBS-15-0299,Kawasan Kampus,Hari Kerja,Tidak,383,7.1,30.0,34.1,Baik
+OBS-15-0300,Pusat Kota,Akhir Pekan,Ya,438,15.5,25.7,33.7,Baik
+OBS-15-0301,Pusat Kota,Hari Kerja,Tidak,677,1.4,27.6,71.5,Tidak Sehat
+OBS-15-0302,Pusat Kota,Hari Kerja,Ya,648,4.6,24.8,61.3,Sedang
+OBS-15-0303,Pinggiran,Hari Kerja,Tidak,299,7.9,29.5,34.8,Baik
+OBS-15-0304,Pinggiran,Akhir Pekan,Ya,152,5.1,26.5,36.4,Sedang
+OBS-15-0305,Kawasan Kampus,Hari Kerja,Tidak,497,9.9,27.4,48.3,Sedang
+OBS-15-0306,Kawasan Kampus,Hari Kerja,Tidak,336,10.6,28.7,37.5,Sedang
+OBS-15-0307,Pusat Kota,Hari Kerja,Ya,656,11.4,29.0,65.3,Tidak Sehat
+OBS-15-0308,Kawasan Kampus,Akhir Pekan,Tidak,316,6.2,26.4,245.0,Sedang
+OBS-15-0309,Kawasan Kampus,Hari Kerja,Tidak,409,15.7,25.9,34.0,Baik
+OBS-15-0310,Pusat Kota,Hari Kerja,Ya,649,3.5,28.8,65.9,Tidak Sehat
+OBS-15-0311,Pusat Kota,Hari Kerja,Ya,703,11.3,25.1,64.8,Sedang
+OBS-15-0312,Pusat Kota,Hari Kerja,Tidak,620,9.9,27.7,68.4,Tidak Sehat
+OBS-15-0313,Pusat Kota,Akhir Pekan,Tidak,397,12.2,27.1,41.9,Sedang
+OBS-15-0314,Pusat Kota,Hari Kerja,Tidak,590,4.2,23.7,57.3,Sedang
+OBS-15-0315,Pusat Kota,Hari Kerja,Tidak,642,8.7,26.8,67.9,Tidak Sehat
+OBS-15-0316,Kawasan Kampus,Hari Kerja,Tidak,406,13.8,23.9,43.5,Sedang
+OBS-15-0317,Pinggiran,Hari Kerja,Tidak,333,3.7,31.7,50.9,Sedang
+OBS-15-0318,Kawasan Kampus,Akhir Pekan,Tidak,204,18.9,25.5,15.9,Baik
+OBS-15-0319,Pusat Kota,Hari Kerja,Tidak,582,19.1,28.5,56.2,Sedang
+OBS-15-0320,Pusat Kota,Hari Kerja,Ya,674,5.1,26.4,60.2,Sedang
+OBS-15-0321,Pusat Kota,Hari Kerja,Tidak,681,23.6,27.7,39.2,Sedang
+OBS-15-0322,Kawasan Kampus,Akhir Pekan,Tidak,177,4.7,29.4,33.2,Baik
+OBS-15-0323,Kawasan Kampus,Hari Kerja,Ya,348,6.0,29.9,34.9,Baik
+OBS-15-0324,Pinggiran,Hari Kerja,Ya,226,2.5,25.6,33.0,Baik
+OBS-15-0325,Kawasan Kampus,Hari Kerja,Ya,357,7.3,29.0,33.2,Baik
+OBS-15-0326,Kawasan Kampus,Hari Kerja,Ya,472,4.9,26.8,48.8,Sedang
+OBS-15-0327,Pusat Kota,Akhir Pekan,Tidak,497,15.5,26.3,36.3,Sedang
+OBS-15-0328,Pusat Kota,Hari Kerja,Ya,481,6.0,28.2,56.1,Sedang
+OBS-15-0329,Pinggiran,Hari Kerja,Ya,321,8.8,30.2,42.3,Sedang
+OBS-15-0330,Pinggiran,Akhir Pekan,Ya,192,5.2,29.3,21.9,Baik
+OBS-15-0331,Pusat Kota,Hari Kerja,Ya,686,24.9,25.7,52.2,Sedang
+OBS-15-0332,Pusat Kota,Akhir Pekan,Tidak,495,6.4,29.5,45.6,Sedang
+OBS-15-0333,Pinggiran,Hari Kerja,Tidak,291,4.2,26.8,29.3,Baik
+OBS-15-0334,Pusat Kota,Akhir Pekan,Tidak,515,8.0,27.0,47.4,Sedang
+OBS-15-0335,Kawasan Kampus,Hari Kerja,Ya,335,5.1,28.1,40.0,Sedang
+OBS-15-0336,Pinggiran,Hari Kerja,Tidak,388,1.8,30.7,42.9,Sedang
+OBS-15-0337,Kawasan Kampus,Hari Kerja,Tidak,276,8.1,31.7,29.2,Baik
+OBS-15-0338,Pinggiran,Hari Kerja,Tidak,349,7.0,29.8,43.3,Sedang
+OBS-15-0339,Kawasan Kampus,Hari Kerja,Ya,291,16.8,29.9,16.8,Baik
+OBS-15-0340,Pinggiran,Hari Kerja,Ya,429,10.7,24.1,38.6,Sedang
+OBS-15-0341,Pinggiran,Hari Kerja,Tidak,482,10.5,23.5,46.5,Sedang
+OBS-15-0342,Pusat Kota,Akhir Pekan,Tidak,554,4.6,26.9,66.5,Tidak Sehat
+OBS-15-0343,Pinggiran,Hari Kerja,Ya,352,6.7,26.0,39.4,Sedang
+OBS-15-0344,Pinggiran,Hari Kerja,Ya,151,5.1,26.0,35.4,Sedang
+OBS-15-0345,Kawasan Kampus,Hari Kerja,Tidak,384,4.7,29.7,54.0,Sedang
+OBS-15-0346,Pinggiran,Hari Kerja,Tidak,306,1.5,27.6,38.1,Sedang
+OBS-15-0347,Pusat Kota,Hari Kerja,Tidak,634,6.9,26.9,59.1,Sedang
+OBS-15-0348,Pinggiran,Hari Kerja,Tidak,357,,28.9,30.8,Baik
+OBS-15-0349,Pusat Kota,Hari Kerja,Ya,751,21.8,30.2,63.8,Sedang
+OBS-15-0350,Pinggiran,Hari Kerja,Ya,333,6.9,23.2,47.2,Sedang
