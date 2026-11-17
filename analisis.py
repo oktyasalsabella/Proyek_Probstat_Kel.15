@@ -6,7 +6,6 @@ import seaborn as sns
 import os
 
 # ==========================================
-# PROYEK STATISTIKA KELOMPOK
 # ==========================================
 
 # 1. MEMBACA DATASET
@@ -22,7 +21,7 @@ print("\nJUMLAH DATA:", df.shape)
 print("\n5 DATA PERTAMA:")
 print(df.head())
 
-
+ 
 skala = {
     "ID_Observasi": "Nominal (identitas)",
     "Zona_Lokasi": "Nominal",
