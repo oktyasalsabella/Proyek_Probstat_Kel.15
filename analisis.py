@@ -6,7 +6,7 @@ import seaborn as sns
 import os
 
 # ==========================================
-# PROYEK STATISTIKA KELOMPOK 15
+# PROYEK STATISTIKA KELOMPOK
 # ==========================================
 
 # 1. MEMBACA DATASET
