@@ -1,0 +1,6 @@
+Kejadian,Jumlah,Total Data,Probabilitas
+Udara Baik,125,350,0.35714285714285715
+Udara Sedang,183,350,0.5228571428571429
+Udara Tidak Sehat,42,350,0.12
+P(Tidak Sehat | Pusat Kota),41,133,0.3082706766917293
+P(Jam Sibuk Ya | Hari Kerja),107,255,0.4196078431372549

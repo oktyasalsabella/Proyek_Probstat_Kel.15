@@ -1,2 +1,2 @@
-n,k,p,Peluang
-10,5,0.46,0.23831890694174185
+Variabel,Kategori Sukses,Proporsi Sukses (p),n,k,P(X=k),P(X>=k)
+Jam_Sibuk,Ya,0.38571428571428573,20,10,0.10302910999148536,0.20463525977620306

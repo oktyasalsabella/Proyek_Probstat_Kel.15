@@ -1,160 +1,186 @@
 # ============================================================
-# PROGRESS 2 - ANALISIS PROBABILITAS
-# KELOMPOK 15 | TEMA B: KUALITAS UDARA
-# STATISTIKA DAN PROBABILITAS
+# PROGRESS 2 - MODELING PROBABILITY
+# Kelompok 15 - Tema B: Kualitas Udara
 # ============================================================
 
 import pandas as pd
 import numpy as np
-from scipy.stats import norm, binom
-import os
+from scipy.stats import norm, binom, shapiro
 
-# 1. MEMUAT DATA
-df = pd.read_csv("hasil/dataset_bersih.csv")
+# 1. MEMBACA DATASET BERSIH
+data = pd.read_csv("hasil/dataset_bersih.csv")
 
-os.makedirs("hasil", exist_ok=True)
+# ============================================================
+# 2. PROBABILITAS EMPIRIS
+# ============================================================
 
-print("=" * 60)
-print("ANALISIS PROBABILITAS - KUALITAS UDARA")
-print("=" * 60)
+jumlah_data = len(data)
 
+# Probabilitas 3 kejadian
+kejadian = {
+    "Udara Baik": (data["Status_Udara"] == "Baik").sum(),
+    "Udara Sedang": (data["Status_Udara"] == "Sedang").sum(),
+    "Udara Tidak Sehat": (data["Status_Udara"] == "Tidak Sehat").sum()
+}
 
-# ------------------------------------------------------------
-# 2. PROBABILITAS KONDISI UDARA
-# ------------------------------------------------------------
+hasil_empiris = []
 
-print("\n1. PROBABILITAS KONDISI UDARA")
+for nama, jumlah in kejadian.items():
+    hasil_empiris.append({
+        "Kejadian": nama,
+        "Jumlah": jumlah,
+        "Total Data": jumlah_data,
+        "Probabilitas": jumlah / jumlah_data
+    })
 
-frekuensi = df["Status_Udara"].value_counts()
-probabilitas = df["Status_Udara"].value_counts(normalize=True)
+# Probabilitas bersyarat 1:
+# P(Status Tidak Sehat | Zona Pusat Kota)
 
-hasil_kondisi = pd.DataFrame({
-    "Frekuensi": frekuensi,
-    "Probabilitas": probabilitas
-})
+pusat_kota = data[data["Zona_Lokasi"] == "Pusat Kota"]
 
-print(hasil_kondisi)
+jumlah_pusat_kota = len(pusat_kota)
 
-hasil_kondisi.to_csv(
-    "hasil/probabilitas_kondisi_udara.csv"
+jumlah_tidak_sehat_pusat = (
+    pusat_kota["Status_Udara"] == "Tidak Sehat"
+).sum()
+
+p_tidak_sehat_pusat = (
+    jumlah_tidak_sehat_pusat / jumlah_pusat_kota
+    if jumlah_pusat_kota > 0 else 0
 )
 
+hasil_empiris.append({
+    "Kejadian": "P(Tidak Sehat | Pusat Kota)",
+    "Jumlah": jumlah_tidak_sehat_pusat,
+    "Total Data": jumlah_pusat_kota,
+    "Probabilitas": p_tidak_sehat_pusat
+})
 
-# ------------------------------------------------------------
+# Probabilitas bersyarat 2:
+# P(Jam Sibuk Ya | Hari Kerja)
+
+hari_kerja = data[data["Jenis_Hari"] == "Hari Kerja"]
+
+jumlah_hari_kerja = len(hari_kerja)
+
+jumlah_jam_sibuk = (
+    hari_kerja["Jam_Sibuk"] == "Ya"
+).sum()
+
+p_jam_sibuk_hari_kerja = (
+    jumlah_jam_sibuk / jumlah_hari_kerja
+    if jumlah_hari_kerja > 0 else 0
+)
+
+hasil_empiris.append({
+    "Kejadian": "P(Jam Sibuk Ya | Hari Kerja)",
+    "Jumlah": jumlah_jam_sibuk,
+    "Total Data": jumlah_hari_kerja,
+    "Probabilitas": p_jam_sibuk_hari_kerja
+})
+
+df_empiris = pd.DataFrame(hasil_empiris)
+
+df_empiris.to_csv(
+    "hasil/probabilitas_empiris.csv",
+    index=False
+)
+
+print("\n=== PROBABILITAS EMPIRIS ===")
+print(df_empiris)
+
+
+# ============================================================
 # 3. DISTRIBUSI NORMAL PM2.5
-# ------------------------------------------------------------
+# ============================================================
 
-print("\n2. DISTRIBUSI NORMAL PM2.5")
+pm25 = data["Indeks_PM25"]
 
-data_pm25 = df["Indeks_PM25"]
+mean_pm25 = pm25.mean()
+std_pm25 = pm25.std(ddof=1)
 
-mean_pm25 = data_pm25.mean()
-std_pm25 = data_pm25.std()
+# Uji normalitas Shapiro-Wilk
+stat_shapiro, p_shapiro = shapiro(pm25)
 
-# Menghitung peluang PM2.5 melebihi nilai rata-rata
-# ditambah satu standar deviasi
-batas = mean_pm25 + std_pm25
+# Dua skenario batas PM2.5
+batas_skenario = [50, 75]
 
-peluang_lebih = 1 - norm.cdf(
-    batas, mean_pm25, std_pm25
-)
+hasil_normal = []
 
-print("Mean PM2.5:", mean_pm25)
-print("Standar deviasi:", std_pm25)
-print("Batas nilai:", batas)
-print("Peluang PM2.5 melebihi batas:", peluang_lebih)
+for batas in batas_skenario:
+    peluang = norm.sf(
+        batas,
+        loc=mean_pm25,
+        scale=std_pm25
+    )
 
-hasil_normal = pd.DataFrame({
-    "Mean": [mean_pm25],
-    "Standar_Deviasi": [std_pm25],
-    "Batas": [batas],
-    "Peluang_Melebihi_Batas": [peluang_lebih]
-})
+    hasil_normal.append({
+        "Mean": mean_pm25,
+        "Standar Deviasi": std_pm25,
+        "Batas PM2.5": batas,
+        "Peluang Melebihi Batas": peluang
+    })
 
-hasil_normal.to_csv(
+df_normal = pd.DataFrame(hasil_normal)
+
+df_normal["Statistik Shapiro"] = stat_shapiro
+df_normal["P_Value Shapiro"] = p_shapiro
+
+df_normal.to_csv(
     "hasil/distribusi_normal_pm25.csv",
     index=False
 )
 
+print("\n=== DISTRIBUSI NORMAL PM2.5 ===")
+print(df_normal)
 
-# ------------------------------------------------------------
+print("\n=== UJI NORMALITAS SHAPIRO-WILK ===")
+print("Statistik:", stat_shapiro)
+print("P-value:", p_shapiro)
+
+
+# ============================================================
 # 4. DISTRIBUSI BINOMIAL
-# ------------------------------------------------------------
+# ============================================================
 
-print("\n3. DISTRIBUSI BINOMIAL")
+# Variabel biner:
+# Sukses = Jam_Sibuk Ya
+# Gagal = Jam_Sibuk Tidak
 
-# Menentukan kejadian PM2.5 di atas rata-rata
-# sebagai kejadian yang diteliti
+jumlah_sukses = (data["Jam_Sibuk"] == "Ya").sum()
 
-kejadian = (df["Indeks_PM25"] > mean_pm25)
+p = jumlah_sukses / jumlah_data
 
-p = kejadian.mean()
+n = 20
+k = 10
 
-n = 10
-k = 5
+# Probabilitas tepat k sukses
+prob_tepat_k = binom.pmf(k, n, p)
 
-peluang_binomial = binom.pmf(k, n, p)
+# Probabilitas minimal k sukses
+prob_minimal_k = binom.sf(k - 1, n, p)
 
-print("Probabilitas kejadian:", p)
-print("Jumlah percobaan:", n)
-print("Jumlah kejadian yang diharapkan:", k)
-print("Peluang tepat 5 kejadian:", peluang_binomial)
-
-hasil_binomial = pd.DataFrame({
-    "n": [n],
-    "k": [k],
-    "p": [p],
-    "Peluang": [peluang_binomial]
-})
+hasil_binomial = pd.DataFrame([{
+    "Variabel": "Jam_Sibuk",
+    "Kategori Sukses": "Ya",
+    "Proporsi Sukses (p)": p,
+    "n": n,
+    "k": k,
+    "P(X=k)": prob_tepat_k,
+    "P(X>=k)": prob_minimal_k
+}])
 
 hasil_binomial.to_csv(
     "hasil/distribusi_binomial.csv",
     index=False
 )
 
-
-# ------------------------------------------------------------
-# 5. PROBABILITAS BERSYARAT
-# ------------------------------------------------------------
-
-print("\n4. PROBABILITAS BERSYARAT")
-
-# Peluang PM2.5 di atas rata-rata pada Pusat Kota
-# dibandingkan dengan seluruh data Pusat Kota
-
-pusat_kota = df[df["Zona_Lokasi"] == "Pusat Kota"]
-
-if len(pusat_kota) > 0:
-
-    peluang_bersyarat = (
-        pusat_kota["Indeks_PM25"] > mean_pm25
-    ).mean()
-
-    print(
-        "Peluang PM2.5 di atas rata-rata "
-        "pada Pusat Kota:",
-        peluang_bersyarat
-    )
-
-    hasil_bersyarat = pd.DataFrame({
-        "Zona": ["Pusat Kota"],
-        "Peluang": [peluang_bersyarat]
-    })
-
-    hasil_bersyarat.to_csv(
-        "hasil/probabilitas_bersyarat.csv",
-        index=False
-    )
-
-else:
-    print("Data Pusat Kota tidak ditemukan.")
+print("\n=== DISTRIBUSI BINOMIAL ===")
+print(hasil_binomial)
 
 
-# ------------------------------------------------------------
-# 6. SELESAI
-# ------------------------------------------------------------
+# ============================================================
+# 5. SELESAI
+# ============================================================
 
-print("\n" + "=" * 60)
-print("ANALISIS PROGRESS 2 SELESAI!")
-print("Hasil tersimpan di folder hasil.")
-print("=" * 60)
+print("\nSemua analisis Progress 2 berhasil dijalankan.")
