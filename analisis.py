@@ -4,10 +4,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import os
 
-# ==========================================
-# ==========================================
-
-# 1. MEMBACA DATASET
 df = pd.read_csv("dataset/Kelompok_15_Tema_B_Kualitas_Udara.csv")
 
 os.makedirs("hasil", exist_ok=True)
@@ -43,9 +39,6 @@ print(tabel_skala.to_string(index=False))
 
 tabel_skala.to_csv("hasil/skala_pengukuran.csv", index=False)
 
-# ==========================================
-# 3. PEMERIKSAAN MISSING VALUES
-# ==========================================
 
 print("\nMISSING VALUES SEBELUM PEMBERSIHAN:")
 print(df.isnull().sum())
@@ -55,10 +48,8 @@ missing.columns = ["Variabel", "Jumlah Missing"]
 
 missing.to_csv("hasil/missing_values.csv", index=False)
 
-# Salin data asli
 df_bersih = df.copy()
 
-# Mengisi missing values dengan median
 kolom_numerik = [
     "Volume_Kendaraan",
     "Kecepatan_Angin_KmJ",
@@ -72,10 +63,6 @@ for kolom in kolom_numerik:
 
 print("\nMISSING VALUES SETELAH IMPUTASI:")
 print(df_bersih.isnull().sum())
-
-# ==========================================
-# 4. DETEKSI OUTLIER DENGAN METODE IQR
-# ==========================================
 
 print("\nHASIL DETEKSI OUTLIER:")
 
@@ -114,7 +101,6 @@ for kolom in kolom_numerik:
         "Jumlah Outlier": jumlah_outlier
     })
 
-    # Penanganan outlier dengan capping
     df_bersih[kolom] = df_bersih[kolom].clip(
         lower=batas_bawah,
         upper=batas_atas
@@ -122,10 +108,6 @@ for kolom in kolom_numerik:
 
 tabel_iqr = pd.DataFrame(hasil_iqr)
 tabel_iqr.to_csv("hasil/deteksi_outlier.csv", index=False)
-
-# ==========================================
-# 5. BOXPLOT SEBELUM DAN SESUDAH PENANGANAN
-# ==========================================
 
 fig, axes = plt.subplots(2, 2, figsize=(12, 8))
 
@@ -161,10 +143,6 @@ plt.tight_layout()
 plt.savefig("hasil/boxplot_sesudah.png", dpi=300)
 plt.show()
 
-# ==========================================
-# 6. STATISTIKA DESKRIPTIF
-# ==========================================
-
 hasil_statistik = []
 
 for kolom in kolom_numerik:
@@ -195,9 +173,6 @@ tabel_statistik.to_csv(
     index=False
 )
 
-# ==========================================
-# 7. GRAFIK HISTOGRAM
-# ==========================================
 
 plt.figure(figsize=(9, 5))
 
@@ -215,10 +190,6 @@ plt.tight_layout()
 
 plt.savefig("hasil/histogram_pm25.png", dpi=300)
 plt.show()
-
-# ==========================================
-# 8. GROUPED BAR CHART
-# ==========================================
 
 plt.figure(figsize=(10, 6))
 
@@ -239,10 +210,6 @@ plt.tight_layout()
 
 plt.savefig("hasil/grouped_bar_chart.png", dpi=300)
 plt.show()
-
-# ==========================================
-# 9. MENYIMPAN DATASET BERSIH
-# ==========================================
 
 df_bersih.to_csv(
     "hasil/dataset_bersih.csv",

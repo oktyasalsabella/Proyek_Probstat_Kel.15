@@ -1,24 +1,10 @@
-# ============================================================
-# PROGRESS 3 - INFERENSI STATISTIK
-# Kelompok 15 - Tema B: Kualitas Udara
-# ============================================================
-
 import pandas as pd
 import numpy as np
 from scipy import stats
 
-# ============================================================
-# 1. MEMBACA DATASET
-# ============================================================
-
 data = pd.read_csv("hasil/dataset_bersih.csv")
 
 print("Jumlah data:", len(data))
-
-
-# ============================================================
-# 2. CONFIDENCE INTERVAL 95% RATA-RATA PM2.5
-# ============================================================
 
 pm25 = data["Indeks_PM25"].dropna()
 
@@ -28,7 +14,6 @@ std_pm25 = pm25.std(ddof=1)
 
 alpha = 0.05
 
-# Menggunakan distribusi t
 t_critical = stats.t.ppf(1 - alpha / 2, df=n - 1)
 
 margin_error = t_critical * (std_pm25 / np.sqrt(n))
@@ -54,11 +39,6 @@ hasil_ci_mean.to_csv(
 print("\n=== CONFIDENCE INTERVAL RATA-RATA PM2.5 ===")
 print(hasil_ci_mean)
 
-
-# ============================================================
-# 3. CONFIDENCE INTERVAL 95% PROPORSI STATUS TIDAK SEHAT
-# ============================================================
-
 jumlah_data = len(data)
 
 jumlah_tidak_sehat = (
@@ -67,7 +47,6 @@ jumlah_tidak_sehat = (
 
 p_hat = jumlah_tidak_sehat / jumlah_data
 
-# Metode Wilson untuk CI proporsi
 z = stats.norm.ppf(1 - alpha / 2)
 
 denominator = 1 + (z**2 / jumlah_data)
@@ -104,11 +83,6 @@ hasil_ci_proporsi.to_csv(
 print("\n=== CONFIDENCE INTERVAL PROPORSI ===")
 print(hasil_ci_proporsi)
 
-
-# ============================================================
-# 4. INDEPENDENT TWO-SAMPLE T-TEST
-# Hari Kerja vs Akhir Pekan
-# ============================================================
 
 hari_kerja = data[
     data["Jenis_Hari"] == "Hari Kerja"
@@ -147,12 +121,6 @@ hasil_t_test.to_csv(
 
 print("\n=== INDEPENDENT T-TEST ===")
 print(hasil_t_test)
-
-
-# ============================================================
-# 5. ONE-WAY ANOVA
-# PM2.5 berdasarkan Zona_Lokasi
-# ============================================================
 
 kampus = data[
     data["Zona_Lokasi"] == "Kawasan Kampus"
@@ -196,11 +164,6 @@ hasil_anova.to_csv(
 print("\n=== ONE-WAY ANOVA ===")
 print(hasil_anova)
 
-
-# ============================================================
-# 6. POST-HOC TUKEY (JIKA ANOVA SIGNIFIKAN)
-# ============================================================
-
 if p_value_anova < alpha:
 
     from statsmodels.stats.multicomp import pairwise_tukeyhsd
@@ -227,12 +190,6 @@ if p_value_anova < alpha:
 else:
     print("\nANOVA tidak signifikan.")
     print("Post-Hoc Tukey tidak dilakukan.")
-
-
-# ============================================================
-# 7. CHI-SQUARE TEST OF INDEPENDENCE
-# Jenis_Hari vs Status_Udara
-# ============================================================
 
 tabel_observasi = pd.crosstab(
     data["Jenis_Hari"],
@@ -284,10 +241,5 @@ print(tabel_ekspektasi)
 
 print("\n=== CHI-SQUARE TEST ===")
 print(hasil_chi)
-
-
-# ============================================================
-# 8. SELESAI
-# ============================================================
 
 print("\nSemua analisis Progress 3 berhasil dijalankan.")

@@ -1,8 +1,3 @@
-# ==========================================
-# PROGRESS 4: KORELASI DAN REGRESI
-# KELOMPOK 15 - TEMA B: KUALITAS UDARA
-# ==========================================
-
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -12,10 +7,8 @@ from scipy import stats
 import statsmodels.api as sm
 from statsmodels.stats.diagnostic import het_breuschpagan
 
-# 1. MEMBACA DATA
 data = pd.read_csv("hasil/dataset_bersih.csv")
 
-# Variabel yang digunakan
 variabel = [
     "Volume_Kendaraan",
     "Kecepatan_Angin_KmJ",
@@ -36,8 +29,6 @@ Y = df["Indeks_PM25"]
 print("DATA BERHASIL DIBACA")
 print("Jumlah data:", len(df))
 
-
-# 2. MATRIKS KORELASI PEARSON
 matriks = df.corr(method="pearson")
 
 matriks.to_csv("hasil/matriks_korelasi.csv")
@@ -68,8 +59,6 @@ plt.tight_layout()
 plt.savefig("hasil/heatmap_korelasi.png")
 plt.close()
 
-
-# 3. SCATTERPLOT DAN GARIS TREN
 daftar_x = [
     "Volume_Kendaraan",
     "Kecepatan_Angin_KmJ",
@@ -95,18 +84,13 @@ for x in daftar_x:
     plt.savefig(f"hasil/scatterplot_{x}_pm25.png")
     plt.close()
 
-
-# 4. REGRESI LINEAR BERGANDA
 X_const = sm.add_constant(X)
 
 model = sm.OLS(Y, X_const).fit()
 
-# Menyimpan ringkasan model
 with open("hasil/ringkasan_regresi.txt", "w") as file:
     file.write(model.summary().as_text())
 
-
-# 5. PERSAMAAN REGRESI
 koefisien = model.params
 
 persamaan = (
@@ -125,8 +109,6 @@ with open("hasil/persamaan_regresi.txt", "w") as file:
 print("\nPERSAMAAN REGRESI:")
 print(persamaan)
 
-
-# 6. HASIL PREDIKSI
 hasil_prediksi = pd.DataFrame({
     "PM25_Aktual": Y,
     "PM25_Prediksi": model.predict(X_const)
@@ -137,8 +119,6 @@ hasil_prediksi.to_csv(
     index=False
 )
 
-
-# 7. R2 DAN ADJUSTED R2
 evaluasi = pd.DataFrame({
     "R_squared": [model.rsquared],
     "Adjusted_R_squared": [model.rsquared_adj],
@@ -152,8 +132,6 @@ evaluasi.to_csv(
     index=False
 )
 
-
-# 8. UJI F SIMULTAN
 uji_f = pd.DataFrame({
     "F_statistic": [model.fvalue],
     "P_value": [model.f_pvalue],
@@ -168,8 +146,6 @@ uji_f.to_csv(
     index=False
 )
 
-
-# 9. UJI T PARSIAL
 uji_t = pd.DataFrame({
     "Koefisien": model.params,
     "T_statistic": model.tvalues,
@@ -186,8 +162,6 @@ uji_t.to_csv(
     "hasil/uji_t_parsial.csv"
 )
 
-
-# 10. ANALISIS RESIDUAL
 residual = model.resid
 prediksi = model.predict(X_const)
 
@@ -205,8 +179,6 @@ plt.tight_layout()
 plt.savefig("hasil/histogram_residual.png")
 plt.close()
 
-
-# Q-Q Plot
 plt.figure(figsize=(8, 5))
 
 sm.qqplot(
@@ -222,8 +194,6 @@ plt.tight_layout()
 plt.savefig("hasil/qqplot_residual.png")
 plt.close()
 
-
-# Fitted vs Residual
 plt.figure(figsize=(8, 5))
 
 plt.scatter(prediksi, residual)
@@ -242,11 +212,8 @@ plt.tight_layout()
 plt.savefig("hasil/fitted_vs_residuals.png")
 plt.close()
 
-
-# 11. UJI NORMALITAS RESIDUAL
 shapiro = stats.shapiro(residual)
 
-# 12. UJI HOMOSKEDASTISITAS
 bp = het_breuschpagan(
     residual,
     X_const
@@ -278,8 +245,6 @@ diagnostik.to_csv(
     index=False
 )
 
-
-# 13. REKOMENDASI AWAL
 rekomendasi = []
 
 rekomendasi.append(
@@ -304,8 +269,6 @@ with open("hasil/rekomendasi_awal.txt", "w") as file:
     for i, item in enumerate(rekomendasi, start=1):
         file.write(f"{i}. {item}\n")
 
-
-# 14. OUTPUT TERMINAL
 print("\n====================================")
 print("PROGRESS 4 BERHASIL DIJALANKAN")
 print("====================================")
