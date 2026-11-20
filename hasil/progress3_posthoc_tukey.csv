@@ -1,0 +1,4 @@
+group1,group2,meandiff,p-adj,lower,upper,reject
+Kawasan Kampus,Pinggiran,-4.7938,0.0235,-9.0675,-0.5201,True
+Kawasan Kampus,Pusat Kota,22.9005,0.0,19.0523,26.7487,True
+Pinggiran,Pusat Kota,27.6943,0.0,23.4607,31.9279,True

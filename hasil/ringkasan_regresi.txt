@@ -1,0 +1,29 @@
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:            Indeks_PM25   R-squared:                       0.817
+Model:                            OLS   Adj. R-squared:                  0.816
+Method:                 Least Squares   F-statistic:                     515.8
+Date:                Fri, 20 Nov 2026   Prob (F-statistic):          2.64e-127
+Time:                        17:55:33   Log-Likelihood:                -1209.5
+No. Observations:                 350   AIC:                             2427.
+Df Residuals:                     346   BIC:                             2442.
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+=======================================================================================
+                          coef    std err          t      P>|t|      [0.025      0.975]
+---------------------------------------------------------------------------------------
+const                  22.0223      5.463      4.031      0.000      11.278      32.767
+Volume_Kendaraan        0.0834      0.002     36.168      0.000       0.079       0.088
+Kecepatan_Angin_KmJ    -1.0257      0.071    -14.489      0.000      -1.165      -0.886
+Suhu_Celcius           -0.1343      0.186     -0.721      0.472      -0.501       0.232
+==============================================================================
+Omnibus:                      138.619   Durbin-Watson:                   1.884
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             1276.019
+Skew:                           1.386   Prob(JB):                    8.24e-278
+Kurtosis:                      11.934   Cond. No.                     6.00e+03
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large,  6e+03. This might indicate that there are
+strong multicollinearity or other numerical problems.

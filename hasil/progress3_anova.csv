@@ -1,0 +1,2 @@
+Variabel,Kelompok,Mean Kampus,Mean Pusat Kota,Mean Pinggiran,Statistik F,P_Value,Alpha,Keputusan
+Indeks_PM25,Zona_Lokasi,35.27824803149606,58.17875939849625,30.484444444444442,150.56760748872853,8.378746752961365e-48,0.05,Tolak H0

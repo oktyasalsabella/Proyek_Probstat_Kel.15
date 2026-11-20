@@ -1,0 +1,3 @@
+Pengujian,Statistik,P_value,Interpretasi
+Shapiro-Wilk,0.9244975677545525,2.734284329727955e-12,Indikasi tidak normal
+Breusch-Pagan,1.4618468836335496,0.6911036233346222,Homoskedastisitas

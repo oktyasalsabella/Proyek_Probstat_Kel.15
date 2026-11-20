@@ -1,350 +1,293 @@
-
 # ============================================================
-# PROGRESS 3 - STATISTIKA INFERENSIAL
-# KELOMPOK 15 | TEMA B: KUALITAS UDARA
-# MATA KULIAH STATISTIKA DAN PROBABILITAS
+# PROGRESS 3 - INFERENSI STATISTIK
+# Kelompok 15 - Tema B: Kualitas Udara
 # ============================================================
 
 import pandas as pd
 import numpy as np
 from scipy import stats
-import os
 
 # ============================================================
-# 1. MEMUAT DATASET
+# 1. MEMBACA DATASET
 # ============================================================
 
-os.makedirs("hasil", exist_ok=True)
+data = pd.read_csv("hasil/dataset_bersih.csv")
 
-print("=" * 65)
-print("PROGRESS 3 - STATISTIKA INFERENSIAL")
-print("KELOMPOK 15 - KUALITAS UDARA")
-print("=" * 65)
+print("Jumlah data:", len(data))
 
-try:
-    df = pd.read_csv("hasil/dataset_bersih.csv")
-except FileNotFoundError:
-    print("ERROR: File dataset_bersih.csv tidak ditemukan!")
-    print("Pastikan file berada di folder hasil.")
-    raise SystemExit
 
-kolom_wajib = [
-    "Indeks_PM25",
-    "Jenis_Hari",
-    "Zona_Lokasi",
-    "Status_Udara"
-]
+# ============================================================
+# 2. CONFIDENCE INTERVAL 95% RATA-RATA PM2.5
+# ============================================================
 
-kolom_hilang = [
-    kolom for kolom in kolom_wajib
-    if kolom not in df.columns
-]
+pm25 = data["Indeks_PM25"].dropna()
 
-if kolom_hilang:
-    print("ERROR: Kolom berikut tidak ditemukan:", kolom_hilang)
-    raise SystemExit
+n = len(pm25)
+mean_pm25 = pm25.mean()
+std_pm25 = pm25.std(ddof=1)
 
-# Mengubah PM2.5 menjadi numerik
-df["Indeks_PM25"] = pd.to_numeric(
-    df["Indeks_PM25"], errors="coerce"
+alpha = 0.05
+
+# Menggunakan distribusi t
+t_critical = stats.t.ppf(1 - alpha / 2, df=n - 1)
+
+margin_error = t_critical * (std_pm25 / np.sqrt(n))
+
+lower_mean = mean_pm25 - margin_error
+upper_mean = mean_pm25 + margin_error
+
+hasil_ci_mean = pd.DataFrame([{
+    "Variabel": "Indeks_PM25",
+    "Jumlah Data": n,
+    "Mean": mean_pm25,
+    "Standar Deviasi": std_pm25,
+    "Confidence Level": "95%",
+    "Batas Bawah": lower_mean,
+    "Batas Atas": upper_mean
+}])
+
+hasil_ci_mean.to_csv(
+    "hasil/progress3_ci_mean_pm25.csv",
+    index=False
 )
 
-df = df.dropna(subset=kolom_wajib)
-
-pm25 = df["Indeks_PM25"]
-
-print("\nJUMLAH DATA:", len(df))
-print("\nKATEGORI JENIS HARI:")
-print(df["Jenis_Hari"].value_counts())
-
-print("\nKATEGORI ZONA:")
-print(df["Zona_Lokasi"].value_counts())
-
-print("\nKATEGORI STATUS UDARA:")
-print(df["Status_Udara"].value_counts())
+print("\n=== CONFIDENCE INTERVAL RATA-RATA PM2.5 ===")
+print(hasil_ci_mean)
 
 
 # ============================================================
-# 2. INTERVAL KEPERCAYAAN 95% RATA-RATA PM2.5
+# 3. CONFIDENCE INTERVAL 95% PROPORSI STATUS TIDAK SEHAT
 # ============================================================
 
-print("\n" + "=" * 65)
-print("1. INTERVAL KEPERCAYAAN 95% PM2.5")
-print("=" * 65)
+jumlah_data = len(data)
 
-n = pm25.count()
-mean = pm25.mean()
-std = pm25.std(ddof=1)
+jumlah_tidak_sehat = (
+    data["Status_Udara"] == "Tidak Sehat"
+).sum()
 
-if n > 1 and std > 0:
+p_hat = jumlah_tidak_sehat / jumlah_data
 
-    standard_error = std / np.sqrt(n)
+# Metode Wilson untuk CI proporsi
+z = stats.norm.ppf(1 - alpha / 2)
 
-    t_critical = stats.t.ppf(
-        0.975, df=n - 1
+denominator = 1 + (z**2 / jumlah_data)
+
+center = (
+    p_hat + (z**2 / (2 * jumlah_data))
+) / denominator
+
+half_width = (
+    z * np.sqrt(
+        (p_hat * (1 - p_hat) / jumlah_data)
+        + (z**2 / (4 * jumlah_data**2))
     )
+) / denominator
 
-    margin_error = t_critical * standard_error
+lower_prop = center - half_width
+upper_prop = center + half_width
 
-    lower_bound = mean - margin_error
-    upper_bound = mean + margin_error
+hasil_ci_proporsi = pd.DataFrame([{
+    "Kategori": "Tidak Sehat",
+    "Jumlah": jumlah_tidak_sehat,
+    "Total Data": jumlah_data,
+    "Proporsi": p_hat,
+    "Confidence Level": "95%",
+    "Batas Bawah": lower_prop,
+    "Batas Atas": upper_prop
+}])
 
-    print("Jumlah sampel:", n)
-    print("Rata-rata:", mean)
-    print("Standar deviasi:", std)
-    print("Standard error:", standard_error)
-    print("Batas bawah 95%:", lower_bound)
-    print("Batas atas 95%:", upper_bound)
-
-    hasil_ci = pd.DataFrame({
-        "Jumlah_Sampel": [n],
-        "Mean": [mean],
-        "Standar_Deviasi": [std],
-        "Batas_Bawah_95": [lower_bound],
-        "Batas_Atas_95": [upper_bound]
-    })
-
-    hasil_ci.to_csv(
-        "hasil/interval_kepercayaan_pm25.csv",
-        index=False
-    )
-
-else:
-    print("Data tidak cukup untuk menghitung interval kepercayaan.")
-
-
-# ============================================================
-# 3. UJI T INDEPENDEN WELCH
-# PERBANDINGAN HARI KERJA DAN AKHIR PEKAN
-# ============================================================
-
-print("\n" + "=" * 65)
-print("2. UJI T INDEPENDEN WELCH")
-print("=" * 65)
-
-hari_kerja = df[
-    df["Jenis_Hari"].astype(str).str.strip().str.lower()
-    == "hari kerja"
-]["Indeks_PM25"].dropna()
-
-akhir_pekan = df[
-    df["Jenis_Hari"].astype(str).str.strip().str.lower()
-    == "akhir pekan"
-]["Indeks_PM25"].dropna()
-
-if len(hari_kerja) > 1 and len(akhir_pekan) > 1:
-
-    t_stat, p_value_t = stats.ttest_ind(
-        hari_kerja,
-        akhir_pekan,
-        equal_var=False
-    )
-
-    print("Jumlah data hari kerja:", len(hari_kerja))
-    print("Jumlah data akhir pekan:", len(akhir_pekan))
-    print("Mean hari kerja:", hari_kerja.mean())
-    print("Mean akhir pekan:", akhir_pekan.mean())
-    print("T-statistik:", t_stat)
-    print("P-value:", p_value_t)
-
-    if p_value_t < 0.05:
-        keputusan_t = "Tolak H0"
-        interpretasi_t = (
-            "Terdapat perbedaan rata-rata PM2.5 "
-            "yang signifikan antara hari kerja "
-            "dan akhir pekan."
-        )
-    else:
-        keputusan_t = "Gagal menolak H0"
-        interpretasi_t = (
-            "Belum terdapat bukti yang cukup "
-            "untuk menyatakan adanya perbedaan "
-            "rata-rata PM2.5 antara kedua kelompok."
-        )
-
-    print("Keputusan:", keputusan_t)
-    print("Interpretasi:", interpretasi_t)
-
-    hasil_t = pd.DataFrame({
-        "Jumlah_Hari_Kerja": [len(hari_kerja)],
-        "Jumlah_Akhir_Pekan": [len(akhir_pekan)],
-        "Mean_Hari_Kerja": [hari_kerja.mean()],
-        "Mean_Akhir_Pekan": [akhir_pekan.mean()],
-        "T_Statistik": [t_stat],
-        "P_Value": [p_value_t],
-        "Keputusan": [keputusan_t],
-        "Interpretasi": [interpretasi_t]
-    })
-
-    hasil_t.to_csv(
-        "hasil/uji_t_hari_kerja_vs_akhir_pekan.csv",
-        index=False
-    )
-
-else:
-    print("PERHATIAN: Kelompok hari kerja atau akhir pekan")
-    print("tidak ditemukan atau jumlah datanya kurang dari 2.")
-    print("Periksa nama kategori pada dataset.")
-
-
-# ============================================================
-# 4. ANOVA SATU ARAH ANTAR ZONA
-# ============================================================
-
-print("\n" + "=" * 65)
-print("3. ANOVA ANTAR ZONA LOKASI")
-print("=" * 65)
-
-kelompok_zona = {
-    nama: grup["Indeks_PM25"].dropna()
-    for nama, grup in df.groupby("Zona_Lokasi")
-}
-
-kelompok_valid = [
-    data for data in kelompok_zona.values()
-    if len(data) > 1
-]
-
-if len(kelompok_valid) >= 2:
-
-    f_stat, p_value_anova = stats.f_oneway(
-        *kelompok_valid
-    )
-
-    print("Jumlah zona:", len(kelompok_valid))
-    print("Nilai F:", f_stat)
-    print("P-value:", p_value_anova)
-
-    if p_value_anova < 0.05:
-        keputusan_anova = "Tolak H0"
-        interpretasi_anova = (
-            "Terdapat perbedaan rata-rata PM2.5 "
-            "yang signifikan pada setidaknya dua zona."
-        )
-    else:
-        keputusan_anova = "Gagal menolak H0"
-        interpretasi_anova = (
-            "Belum terdapat bukti yang cukup "
-            "untuk menyatakan adanya perbedaan "
-            "rata-rata PM2.5 antar zona."
-        )
-
-    print("Keputusan:", keputusan_anova)
-    print("Interpretasi:", interpretasi_anova)
-
-    rata_zona = df.groupby(
-        "Zona_Lokasi"
-    )["Indeks_PM25"].agg(
-        Jumlah_Data="count",
-        Rata_Rata="mean",
-        Median="median",
-        Standar_Deviasi="std"
-    ).reset_index()
-
-    rata_zona["F_Statistik"] = f_stat
-    rata_zona["P_Value"] = p_value_anova
-    rata_zona["Keputusan"] = keputusan_anova
-
-    rata_zona.to_csv(
-        "hasil/anova_pm25_antar_zona.csv",
-        index=False
-    )
-
-else:
-    print("Data zona tidak mencukupi untuk ANOVA.")
-
-
-# ============================================================
-# 5. UJI CHI-SQUARE
-# HUBUNGAN JENIS HARI DAN STATUS UDARA
-# ============================================================
-
-print("\n" + "=" * 65)
-print("4. UJI CHI-SQUARE")
-print("=" * 65)
-
-tabel_kontingensi = pd.crosstab(
-    df["Jenis_Hari"],
-    df["Status_Udara"]
+hasil_ci_proporsi.to_csv(
+    "hasil/progress3_ci_proporsi.csv",
+    index=False
 )
 
-print("\nTABEL KONTINGENSI:")
-print(tabel_kontingensi)
+print("\n=== CONFIDENCE INTERVAL PROPORSI ===")
+print(hasil_ci_proporsi)
 
-if (
-    tabel_kontingensi.shape[0] >= 2
-    and tabel_kontingensi.shape[1] >= 2
-):
 
-    chi2, p_value_chi, dof, expected = (
-        stats.chi2_contingency(tabel_kontingensi)
+# ============================================================
+# 4. INDEPENDENT TWO-SAMPLE T-TEST
+# Hari Kerja vs Akhir Pekan
+# ============================================================
+
+hari_kerja = data[
+    data["Jenis_Hari"] == "Hari Kerja"
+]["Indeks_PM25"].dropna()
+
+akhir_pekan = data[
+    data["Jenis_Hari"] == "Akhir Pekan"
+]["Indeks_PM25"].dropna()
+
+# Welch's t-test (tidak mengasumsikan varians sama)
+t_stat, p_value_t = stats.ttest_ind(
+    hari_kerja,
+    akhir_pekan,
+    equal_var=False
+)
+
+hasil_t_test = pd.DataFrame([{
+    "Kelompok 1": "Hari Kerja",
+    "Kelompok 2": "Akhir Pekan",
+    "Mean Hari Kerja": hari_kerja.mean(),
+    "Mean Akhir Pekan": akhir_pekan.mean(),
+    "Statistik t": t_stat,
+    "P_Value": p_value_t,
+    "Alpha": alpha,
+    "Keputusan": (
+        "Tolak H0"
+        if p_value_t < alpha
+        else "Gagal menolak H0"
+    )
+}])
+
+hasil_t_test.to_csv(
+    "hasil/progress3_t_test.csv",
+    index=False
+)
+
+print("\n=== INDEPENDENT T-TEST ===")
+print(hasil_t_test)
+
+
+# ============================================================
+# 5. ONE-WAY ANOVA
+# PM2.5 berdasarkan Zona_Lokasi
+# ============================================================
+
+kampus = data[
+    data["Zona_Lokasi"] == "Kawasan Kampus"
+]["Indeks_PM25"].dropna()
+
+pusat = data[
+    data["Zona_Lokasi"] == "Pusat Kota"
+]["Indeks_PM25"].dropna()
+
+pinggiran = data[
+    data["Zona_Lokasi"] == "Pinggiran"
+]["Indeks_PM25"].dropna()
+
+f_stat, p_value_anova = stats.f_oneway(
+    kampus,
+    pusat,
+    pinggiran
+)
+
+hasil_anova = pd.DataFrame([{
+    "Variabel": "Indeks_PM25",
+    "Kelompok": "Zona_Lokasi",
+    "Mean Kampus": kampus.mean(),
+    "Mean Pusat Kota": pusat.mean(),
+    "Mean Pinggiran": pinggiran.mean(),
+    "Statistik F": f_stat,
+    "P_Value": p_value_anova,
+    "Alpha": alpha,
+    "Keputusan": (
+        "Tolak H0"
+        if p_value_anova < alpha
+        else "Gagal menolak H0"
+    )
+}])
+
+hasil_anova.to_csv(
+    "hasil/progress3_anova.csv",
+    index=False
+)
+
+print("\n=== ONE-WAY ANOVA ===")
+print(hasil_anova)
+
+
+# ============================================================
+# 6. POST-HOC TUKEY (JIKA ANOVA SIGNIFIKAN)
+# ============================================================
+
+if p_value_anova < alpha:
+
+    from statsmodels.stats.multicomp import pairwise_tukeyhsd
+
+    tukey = pairwise_tukeyhsd(
+        endog=data["Indeks_PM25"],
+        groups=data["Zona_Lokasi"],
+        alpha=alpha
     )
 
-    print("\nChi-Square:", chi2)
-    print("P-value:", p_value_chi)
-    print("Degree of Freedom:", dof)
-
-    print(
-        "Frekuensi harapan minimum:",
-        expected.min()
+    hasil_tukey = pd.DataFrame(
+        tukey.summary().data[1:],
+        columns=tukey.summary().data[0]
     )
 
-    if p_value_chi < 0.05:
-        keputusan_chi = "Tolak H0"
-        interpretasi_chi = (
-            "Terdapat hubungan yang signifikan "
-            "antara jenis hari dan status udara."
-        )
-    else:
-        keputusan_chi = "Gagal menolak H0"
-        interpretasi_chi = (
-            "Belum terdapat bukti yang cukup "
-            "untuk menyatakan adanya hubungan "
-            "antara jenis hari dan status udara."
-        )
-
-    print("Keputusan:", keputusan_chi)
-    print("Interpretasi:", interpretasi_chi)
-
-    hasil_chi = pd.DataFrame({
-        "Chi_Square": [chi2],
-        "P_Value": [p_value_chi],
-        "Degree_of_Freedom": [dof],
-        "Expected_Minimum": [expected.min()],
-        "Keputusan": [keputusan_chi],
-        "Interpretasi": [interpretasi_chi]
-    })
-
-    hasil_chi.to_csv(
-        "hasil/uji_chi_square_jenis_hari_status_udara.csv",
+    hasil_tukey.to_csv(
+        "hasil/progress3_posthoc_tukey.csv",
         index=False
     )
 
-    tabel_kontingensi.to_csv(
-        "hasil/tabel_kontingensi_status_udara.csv"
-    )
+    print("\n=== POST-HOC TUKEY ===")
+    print(hasil_tukey)
 
 else:
-    print(
-        "Data kategori tidak mencukupi "
-        "untuk pengujian Chi-Square."
+    print("\nANOVA tidak signifikan.")
+    print("Post-Hoc Tukey tidak dilakukan.")
+
+
+# ============================================================
+# 7. CHI-SQUARE TEST OF INDEPENDENCE
+# Jenis_Hari vs Status_Udara
+# ============================================================
+
+tabel_observasi = pd.crosstab(
+    data["Jenis_Hari"],
+    data["Status_Udara"]
+)
+
+chi2, p_value_chi, df_chi, expected = (
+    stats.chi2_contingency(tabel_observasi)
+)
+
+tabel_ekspektasi = pd.DataFrame(
+    expected,
+    index=tabel_observasi.index,
+    columns=tabel_observasi.columns
+)
+
+tabel_observasi.to_csv(
+    "hasil/progress3_chi_observasi.csv"
+)
+
+tabel_ekspektasi.to_csv(
+    "hasil/progress3_chi_ekspektasi.csv"
+)
+
+hasil_chi = pd.DataFrame([{
+    "Variabel 1": "Jenis_Hari",
+    "Variabel 2": "Status_Udara",
+    "Statistik Chi-Square": chi2,
+    "Derajat Bebas": df_chi,
+    "P_Value": p_value_chi,
+    "Alpha": alpha,
+    "Keputusan": (
+        "Tolak H0"
+        if p_value_chi < alpha
+        else "Gagal menolak H0"
     )
+}])
+
+hasil_chi.to_csv(
+    "hasil/progress3_chi_square.csv",
+    index=False
+)
+
+print("\n=== TABEL OBSERVASI CHI-SQUARE ===")
+print(tabel_observasi)
+
+print("\n=== TABEL EKSPEKTASI CHI-SQUARE ===")
+print(tabel_ekspektasi)
+
+print("\n=== CHI-SQUARE TEST ===")
+print(hasil_chi)
 
 
 # ============================================================
-# 6. RINGKASAN HASIL
+# 8. SELESAI
 # ============================================================
 
-print("\n" + "=" * 65)
-print("RINGKASAN OUTPUT PROGRESS 3")
-print("=" * 65)
-
-print("1. interval_kepercayaan_pm25.csv")
-print("2. uji_t_hari_kerja_vs_akhir_pekan.csv")
-print("3. anova_pm25_antar_zona.csv")
-print("4. uji_chi_square_jenis_hari_status_udara.csv")
-print("5. tabel_kontingensi_status_udara.csv")
-
-print("\nPROGRESS 3 SELESAI!")
-print("Periksa folder hasil untuk melihat seluruh output.")
-print("=" * 65)
+print("\nSemua analisis Progress 3 berhasil dijalankan.")

@@ -1,0 +1,1 @@
+Indeks_PM25 = 22.0223 + (0.0834 * Volume_Kendaraan) + (-1.0257 * Kecepatan_Angin_KmJ) + (-0.1343 * Suhu_Celcius)
