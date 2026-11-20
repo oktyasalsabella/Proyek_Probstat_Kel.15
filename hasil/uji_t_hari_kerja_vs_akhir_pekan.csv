@@ -1,0 +1,2 @@
+Jumlah_Hari_Kerja,Jumlah_Akhir_Pekan,Mean_Hari_Kerja,Mean_Akhir_Pekan,T_Statistik,P_Value,Keputusan,Interpretasi
+255,95,46.778333333333336,31.928815789473685,7.588809688600429,1.7503714911815709e-12,Tolak H0,Terdapat perbedaan rata-rata PM2.5 yang signifikan antara hari kerja dan akhir pekan.
